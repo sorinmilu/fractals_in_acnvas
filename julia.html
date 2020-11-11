@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset = "UTF-8" />
+    <title>Fractals</title>
+    <link rel="stylesheet" href="css/main.css">
+<script>
+
+
+</script>
+</head>
+<body>
+
+
+
+    <head>
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Fractali in canvasul HTML5</title>
+        <meta content="game of life" name="description">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/normalize.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+    </head>
+
+    <body class="body silver">
+        <div class="navbar fixednav w-nav">
+            <a href="index.html" aria-current="page" class="brand w-nav-brand w--current">
+                <img src="img/logo.png" alt="Game of Life logo" id="logo">
+            </a>
+            <nav role="navigation" class="nav-menu w-nav-menu">
+                    <a href="index.html" class="nav-link w-nav-link">Home</a>
+                    <a href="canvas.html" class="nav-link w-nav-link">Canvas</a>
+                    <a href="chaos_game.html" class="nav-link w-nav-link">Algoritmul Chaos Game</a>
+                    <a href="mandelbrot.html" class="nav-link w-nav-link">Mandelbrot</a>
+                    <a href="julia.html" class="nav-link w-nav-link">Julia</a>
+                    <a href="about_this_site.html" class="nav-link w-nav-link">Despre acest site</a>
+            </nav>
+
+
+            <div class="menu-button w-nav-button"><img src="img/icon-hamburger-dark.svg" alt="" class="image-6"></div>
+            <div class="w-nav-overlay" data-wf-ignore=""></div>
+        </div>
+
+        <div class="container">
+
+<div class="main-game">
+
+
+
+<div id="gridContainer">
+<div class="controls">
+
+    <button class="w-button" onClick="drawJulia(0.41,0.1);"><span>Julia Set</span></button>
+    <button class="w-button" onClick="drawJulia(0.41,0.13);"><span>Julia Set</span></button>
+    <button class="w-button" onClick="drawJulia(-0.78,0.15);"><span>Julia Set</span></button>
+    <button class="w-button" onClick="drawJulia(-0.78,0.13);"><span>Julia Set</span></button>
+
+
+</div>
+
+    <canvas width="600" height="500" id="canvas"></canvas>
+
+</div>
+
+<div id="nonGridContainer">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.6.0/math.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/mandelbrot.js"></script>
+    <script src="js/julia.js"></script>
+
+</div>
+     </div>
+        </div>
+        <div id="footer"></div>
+    </body>
+
+</html>
