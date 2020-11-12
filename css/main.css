@@ -531,7 +531,7 @@ body {
 
 .main {
     position: relative;
-    padding-top: 30vh;
+    padding-top: 10vh;
     padding-right: 20px;
     padding-left: 60px;
     -webkit-box-orient: horizontal;
@@ -548,6 +548,27 @@ body {
     align-items: flex-end;
     font-weight: 300
 }
+
+.main-canvas {
+    position: relative;
+    padding-top: 10vh;
+    padding-right: 20px;
+    padding-left: 60px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    font-weight: 300
+}
+
 
 .main-game {
     position: relative;
@@ -659,4 +680,28 @@ body {
     src: url('https://uploads-ssl.webflow.com/59a1adc9fdd0390001e04fc2/5c82e5a349cdcfb357681f74_Inter-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
+}
+
+.side-by-side {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top:10px;
+}
+
+#smpcanvas {
+    margin:30px;
+    border: 1px solid white;
+}
+
+#mstatus {
+    text-align: right;
+    font-family: 'Inter';
+    font-size:18px;
+    src: url('https://uploads-ssl.webflow.com/59a1adc9fdd0390001e04fc2/5c82e5a349cdcfb357681f74_Inter-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    padding-top:10px;
+    padding-bottom:10px;
+    color: #fdbd3f;
 }

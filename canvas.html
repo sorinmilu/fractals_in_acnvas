@@ -18,9 +18,12 @@
 
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <title>Fractali in canvasul HTML5</title>
+        <title>Fractali în canvas - Canvas</title>
         <meta content="game of life" name="description">
         <link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/pretify-tranquil-heart.css" rel="stylesheet" type="text/css">
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        <script src="js/main.js"></script>
         <link href="css/normalize.css" rel="stylesheet" type="text/css">
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
@@ -28,14 +31,14 @@
 
     </head>
 
-    <body class="body silver">
+    <body class="body silver"  onload = "drawSmileyFace('smpcanvas');">
         <div class="navbar fixednav w-nav">
             <a href="index.html" aria-current="page" class="brand w-nav-brand w--current">
                 <img src="img/logo.png" alt="Game of Life logo" id="logo">
             </a>
             <nav role="navigation" class="nav-menu w-nav-menu">
                     <a href="index.html" class="nav-link w-nav-link">Home</a>
-                    <a href="canvas.html" class="nav-link w-nav-link">Canvas</a>
+                    <span class="cta nav-link w-nav-link">Canvas</span>
                     <a href="chaos_game.html" class="nav-link w-nav-link">Algoritmul Chaos Game</a>
                     <a href="mandelbrot.html" class="nav-link w-nav-link">Mandelbrot</a>
                     <a href="julia.html" class="nav-link w-nav-link">Julia</a>
@@ -47,20 +50,59 @@
         </div>
 
         <div class="container">
-            <div class="main">
-                <div class="typer">Canvas</div>
+            <div class="main-canvas">
+
                     <div id="jhchome">
                     <div id="jhcphoto">
                         <img src="img/canvas-logo.png">
                     </div>
 
                     <div id="jhctext">
-
+ <div class="typer">Canvas</div>
                     <div class="headline link">
-                        Despre canvas
+                        <p>Canvas-ul este unul dintre cele câteva elementele standardului HTML5, standard care a adăugat limbajului HTML elementele necesare pentru a permite
+                        clienților web să afișeze conținut multimedia. Alte elemente adăugate de acest standard sunt &lt;video&gt;, &lt;audio&gt;
+                        fiecare dintre ele reprezentând, ca și canvas, API-uri către funcționalități avansate ale browserelor și chiar ale sistemului de operare.</p>
+                        <p>
+                        Canvas este foarte diferit de funcționalitatea clasică a unui browser internet. În varianta clasică, browserul primește o serie de declarații, structurate într-un conținut HTML, pe care le transformă într-o structură de date numită DOM (Document Object Model). DOM-ul este compus din componente ierarhizate arborescent care conțin instrucțiuni cu privire la afișarea conținutului acestora împreună cu conținutul în sine.
 
-                        <br><br>
-                        cate ceva
+                        Motorul de afișare a browserului va aranja pe pagină elementele de conținut din DOM în funcție de instrucțiunile care le însoțesc, asociindu-le evenimente și funcționalități suplimentare dacă sunt solicitate prin Javascript sau CSS.
+
+                        </p>
+                        <p>
+                            Canvas-ul funcționează complet diferit, punând la dispoziția utilizatorului o suprafață de desen accesibilă la nivel de pixel. Canvas-ul permite accesarea directă a fiecărui pixel din suprafața interioară, similar cu accesul disponibil într-un software de editare a imaginilor bitmap. </p>
+
+                        <p>Posibilitatea de a accesa fiecare pixel în parte face posibilă nu doar desenele 2D ci și construcția scenelor 3D. Majoritatea browserelor au implementat legături cu componentele sistemelor de operare care accesează procesoarele grafice (atunci când sunt disponibile) - ex: DirectX in cazul sistemelor Windows - precum și componente software de randare a scenelor 3D pentru dispozitivele lipsite de procesoare grafice.</p>
+
+                        <p>Astfel, canvasul a devenit o scenă în care se pot “desena” imagini 2D, se pot afișa scene 3D, se pot construi și executa animații complexe, aproape la fel de eficient ca într-o aplicație nativă a sistemului de operare. Aceasta funcționalitate permite dezvoltarea jocurilor 3D care pot fi rulate direct din programele de navigare, aplicații de desen online, chiar aplicații de CAD care sunt accesibile direct din browser, cum este de exemplu clara.io.</p>
+                        <p>
+                            Interpretoarele Javascript existente în programele de navigare au fost extinse cu o serie de instrucțiuni care interacționează cu interiorul canvasului (contextul) pentru a desena figuri geometrice. Astfel, canvasul este în acest moment un component cu personalitate dubla: tagul &lt;canvas&gt; reprezintă un component al DOM-ului care se supune acelarași reguli ca orice alt component și este poziționat în pagină de motorul de construcție a paginii în timp ce interiorul acestuia (contextul) este un spațiu de desen care este accesat direct, fără nici o intervenție din partea motorului de construcție.
+
+                        </p>
+                         <div class="typer">Exemplu</div>
+                        <div class="side-by-side">
+                            <div><pre class="prettyprint">
+ function drawSmileyFace(canvasid) {
+    var canvas = document.getElementById(canvasid);
+    var ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(75,75,50,0,Math.PI*2,true);
+
+    ctx.moveTo(110,75);
+    ctx.arc(75,75,35,0,Math.PI,false);
+
+    ctx.moveTo(65,65);
+    ctx.arc(60,65,5,0,Math.PI*2,true);
+
+    ctx.moveTo(95,65);
+    ctx.arc(90,65,5,0,Math.PI*2,true);
+    ctx.stroke();
+ }
+
+
+                            </pre></div>
+                              <div><canvas id="smpcanvas" width="300px" height="300px"></canvas></div>
+                        </div>
 
                 </div>
                 <br><br><br><br>

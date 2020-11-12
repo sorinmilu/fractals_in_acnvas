@@ -18,7 +18,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <title>Fractali in canvasul HTML5</title>
+        <title>Fractali în canvas - Mandelbrot Set</title>
         <meta content="game of life" name="description">
         <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -37,7 +37,7 @@
                     <a href="index.html" class="nav-link w-nav-link">Home</a>
                     <a href="canvas.html" class="nav-link w-nav-link">Canvas</a>
                     <a href="chaos_game.html" class="nav-link w-nav-link">Algoritmul Chaos Game</a>
-                    <a href="mandelbrot.html" class="nav-link w-nav-link">Mandelbrot</a>
+                    <span class="cta nav-link w-nav-link">Mandelbrot</span>
                     <a href="julia.html" class="nav-link w-nav-link">Julia</a>
                     <a href="about_this_site.html" class="nav-link w-nav-link">Despre acest site</a>
             </nav>
@@ -48,6 +48,7 @@
         </div>
 
         <div class="container">
+
 
 <div class="main-game">
 
@@ -63,7 +64,10 @@
     <button class="w-button" onClick="mandelbrot(-600, -1300, 1850);"><span>Mandelbrot</span></button>
 
 
+
 </div>
+
+    <div id="mstatus"></div>
 
     <canvas width="600" height="500" id="canvas"></canvas>
 

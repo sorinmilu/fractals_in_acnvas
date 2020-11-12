@@ -1,9 +1,29 @@
 // The HTML elements we are using
 
 
-
-
 function drawJulia(real,imaginar) {
+
+    settext().then(value => {
+            doJulia(real,imaginar);
+       }
+    ).then(value => {
+        var statusdiv = document.getElementById("mstatus");
+        statusdiv.innerText = 'Julia Set: real: ' + real + ' imaginar: ' + imaginar;
+    })
+}
+
+
+function settext() {
+    var statusdiv = document.getElementById("mstatus");
+     statusdiv.innerText = 'Calculez ....';
+       return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+              resolve();
+        },300);
+  });
+}
+
+function doJulia(real,imaginar) {
     var canvas = document.querySelector('canvas')
     var ctx = canvas.getContext('2d')
 
@@ -22,13 +42,10 @@ function drawJulia(real,imaginar) {
     for (var x = 0; x < imagew; x++) {
 
       var point = pixelToPoint(x, y, imagew, imageh);
-      // Turn that point into a color
-      var color = pointToColor(point, maxIterations, constant);
 
-      // Draw over this pixel with that color
-//      drawPixel(x, y, color)
-        ctx.fillStyle = color;
-        ctx.fillRect(x, y, 1, 1);
+      var rgb = pointToColor(point, maxIterations, constant);
+      ctx.fillStyle = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
+      ctx.fillRect(x, y, 1, 1);
 
     }
   }
@@ -55,21 +72,18 @@ function julia(z, i = 0, maxIterations, constant) {
 
 // Turn a point on the complex plane into a color
 function pointToColor(point, maxIterations, constant) {
-  // How many iterations on this point before it escapes?
+
   var iterations = julia(point, 0, maxIterations, constant);
-
-  // What percentage of our limit is that?
   var percentage = iterations/maxIterations;
+  var red = Math.floor(percentage*255);
+  var green = Math.floor(percentage*85);
+  var blue = Math.floor(percentage*45);
+  var color = [];
+  color[0] = red;
+  color[1] = green;
+  color[2] = blue;
+  return color;
 
-  var red = percentage*255
-  var green = percentage*85
-  var blue = percentage*45
-
-  // Create a color from that percentage
-  // console.log(red);
-  // console.log(green);
-  // console.log(blue);
-  return `rgb(${red}, ${green}, ${blue})`
 }
 
 // Turn XY pixel coordinates into a point on the complex plane

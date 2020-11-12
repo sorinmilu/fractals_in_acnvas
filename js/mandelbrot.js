@@ -7,13 +7,29 @@
 // The function gets called when the window is fully loaded
 
 
-
-
-
-
-
 function mandelbrot(panx, pany, zoom) {
+    settext().then(value => {
+            mandel(panx, pany, zoom);
+        }
+    ).then(value => {
+        var statusdiv = document.getElementById("mstatus");
+        statusdiv.innerText = 'Mandelbrot: pan x: ' + panx + ' pan y: ' + pany + ' zoom: ' + zoom;
+    })
+}
 
+
+function settext() {
+    var statusdiv = document.getElementById("mstatus");
+     statusdiv.innerText = 'Calculez ....';
+       return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+              resolve();
+        },300);
+  });
+}
+
+function mandel(panx, pany, zoom) {
+        var statusdiv = document.getElementById("mstatus");
         var canvas = document.getElementById("canvas");
         var context = canvas.getContext("2d");
 
@@ -52,14 +68,9 @@ function mandelbrot(panx, pany, zoom) {
 
         // Enter main loop
          context.putImageData(imgdata, 0, 0);
+
     }
 
-    // Main loop
-    // function main(tframe) {
-    //     context.putImageData(imagedata, 0, 0);
-    // }
-
-    // Generate palette
     function generatePalette() {
         // Calculate a gradient
         var roffset = 24;
@@ -80,9 +91,7 @@ function mandelbrot(panx, pany, zoom) {
         return palette;
     }
 
-    // Generate the fractal image
     function generateImage(settings) {
-        // Iterate over the pixels
         settings.palette = generatePalette();
         for (var y=0; y<settings.imageh; y++) {
             for (var x=0; x<settings.imagew; x++) {
@@ -95,7 +104,6 @@ function mandelbrot(panx, pany, zoom) {
         return settings.imagedata;
     }
 
-    // Calculate the color of a specific pixel
     function iterate(x, y, settings) {
         // Convert the screen coordinate to a fractal coordinate
         var offsetx = -settings.imagew/2;
@@ -142,7 +150,6 @@ function mandelbrot(panx, pany, zoom) {
         return imgdata;
     }
 
-    // Zoom the fractal
     function zoomFractal(x, y, factor, zoomin) {
         if (zoomin) {
             // Zoom in
@@ -157,13 +164,3 @@ function mandelbrot(panx, pany, zoom) {
         }
     }
 
-
-
-    // Get the mouse position
-    function getMousePos(canvas, e) {
-        var rect = canvas.getBoundingClientRect();
-        return {
-            x: Math.round((e.clientX - rect.left)/(rect.right - rect.left)*canvas.width),
-            y: Math.round((e.clientY - rect.top)/(rect.bottom - rect.top)*canvas.height)
-        };
-    }

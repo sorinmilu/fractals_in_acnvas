@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+
+<html>
+   <head>
+
+      <style>
+         #test {
+            width: 400px;
+            height:400px;
+            margin: 0px auto;
+         }
+
+         #mycanvas {
+             border:1px solid black;
+         }
+
+      </style>
+
+      <script type = "text/javascript">
+         function drawShape() {
+
+            var canvas = document.getElementById('mycanvas');
+            var ctx = canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.strokeStyle = '#4d5eff';
+            ctx.arc(145,125,70,0,Math.PI*2,true);
+            ctx.stroke();
+
+            ctx.moveTo(190,130);
+            ctx.beginPath();
+            ctx.strokeStyle = '#49ff3a';
+            ctx.arc(145,130,45,0,Math.PI,false);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(125,100);
+            ctx.arc(115,100,10,0,Math.PI*2,true);
+
+            ctx.moveTo(185,100);
+            ctx.arc(175,100,10,0,Math.PI*2,true);
+            ctx.strokeStyle = '#ff0000';
+            ctx.stroke();
+         }
+      </script>
+   </head>
+
+   <body id = "test" onload = "drawShape();">
+      <canvas id = "mycanvas" width = "300px" height="300px"></canvas>
+   </body>
+
+</html>
