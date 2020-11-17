@@ -58,12 +58,12 @@
 <div id="gridContainer">
 <div class="controls">
 
-    <button class="w-button" onClick="drawTriangle();"><span>Triangle</span></button>
-    <button class="w-button" onClick="drawSquare1();"><span>Square1</span></button>
-    <button class="w-button" onClick="drawSquare2();"><span>Square2</span></button>
-    <button class="w-button" onClick="drawSquare3();"><span>Square3</span></button>
-    <button class="w-button" onClick="drawSquare4();"><span>Square4</span></button>
-    <button class="w-button" onClick="drawPentagon();"><span>Pentagon</span></button>
+    <button class="w-button" onClick="doChaosGame('triangle');"><span>Triunghi</span></button>
+    <button class="w-button" onClick="doChaosGame('square', 1);"><span>Pătrat v1</span></button>
+    <button class="w-button" onClick="doChaosGame('square', 2);"><span>Pătrat v2</span></button>
+    <button class="w-button" onClick="doChaosGame('square', 3);"><span>Pătrat v3</span></button>
+    <button class="w-button" onClick="doChaosGame('square', 4);"><span>Pătrat v4</span></button>
+    <button class="w-button" onClick="doChaosGame('pentagon');"><span>Pentagon</span></button>
 
 
 </div>
@@ -74,14 +74,63 @@
 </div>
 
 <div id="nonGridContainer">
+         <div class="typer">Jocul haosului</div>
+             <p class="headline">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.6.0/math.min.js"></script>
-    <script src="js/chaos_game.js"></script>
+Jocul haosului (sau jocul haotic) se referă la un algoritm iterativ descris pentru prima dată de matematicianul britanic Michael Barnsley în 1988. Algoritmul generează o figură autosimilară (fractal) prin repetarea unei proceduri extrem de simple, ancorată în colțurile unui poligon cu n laturi.
+                        </p>
+<p class="headline">
+       Algoritmul este următorul:
+    <ol  class="headline">
+                 <li> se alege un punct X la întâmplare în interiorul poligonului </li>
+                 <li>se alege unul dintre colțurile poligonului la întâmplare (C)</li>
+                 <li>se plasează un punct (P) la jumătatea distanței între punctul inițial (X) și colțul ales (C).</li>
+                 <li>P devine noul punct inițial</li>
+                 <li>se alege un alt colț al poligonului (C1)</li>
+                 <li>se plasează un punct P1 la jumătatea distanței dintre P și C1.</li>
+    </ol>
+             </p>
+
+    <img src="img/chaos-game.png" width="600px">
+
+<p class="headline">
+    După aplicarea algoritmului în cazul unui triunghi se obține o figură cunoscută sub numele de “triunghiul lui Sierpinsky” sau “sita lui Sierpinsky”, a cărui construcție geometrică se obține prin subdivizarea infinită a unui triunghi echilateral în 4 triunghiuri.
+
+</p>
+
+<p class="headline">
+  Interfața curentă oferă următoarele opțiuni:
+
+ <dl class="headline">
+      <dt class="llabel">Triunghi</dt>
+      <dd>Poligonul de referință este un triunghi, alegerea colțurilor este complet aleatoare. Rezultatul simulării este triunghiul lui Sierpinsky</dd>
+      <dt class="llabel">Patrat v1</dt>
+      <dd>Poligonul de referință este un pătrat, alegerea colțurilor este aleatoare. Rezultatul simulării este complet aleator, nu fractal. </dd>
+      <dt class="llabel">Patrat v2</dt>
+      <dd>Poligonul de referință este un pătrat, alegerea colțurilor este făcută astfel încât colțul următor nu poate fi același cu culțul curent. Rezultatul simulării este fractal. </dd>
+      <dt class="llabel">Patrat v3</dt>
+      <dd>Poligonul de referință este un pătrat, alegerea colțurilor este făcută astfel încât colțul următor nu poate fi același cu culțul curent, nici la un colț distanță în sens antiorar. Rezultatul simulării este fractal. </dd>
+      <dt class="llabel">Patrat v4</dt>
+      <dd>Poligonul de referință este un pătrat, alegerea colțurilor este făcută astfel încât colțul următor nu poate fi același cu culțul curent, nici la două colțuri distanță. Rezultatul simulării este fractal. </dd>
+      <dt class="llabel">Pentagon</dt>
+      <dd>Poligonul de referință este un pentagon, alegerea colțurilor este făcută astfel încât colțul următor nu poate fi vecinul coltului curent, în ambele sensuri. Rezultatul simulării este fractal. </dd>
+</dl>
+
+
+</p>
+
+    <p>
+        Codul de desen este adaptat după cel descris în articolul următor: <a href="https://www.lesscake.com/fractals-chaos-game">https://www.lesscake.com/fractals-chaos-game</a>
+
+    </p>
+
 
 </div>
      </div>
         </div>
         <div id="footer"></div>
     </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.6.0/math.min.js"></script>
+    <script src="js/chaos_game.js"></script>
 
 </html>

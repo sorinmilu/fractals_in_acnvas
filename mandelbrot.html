@@ -5,10 +5,9 @@
     <meta charset = "UTF-8" />
     <title>Fractals</title>
     <link rel="stylesheet" href="css/main.css">
-<script>
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 
-</script>
 </head>
 <body>
 
@@ -59,9 +58,9 @@
 <div class="controls">
 
 
-    <button class="w-button" onClick="mandelbrot(-100,0,180);"><span>Mandelbrot</span></button>
-    <button class="w-button" onClick="mandelbrot(-200, -800, 950);"><span>Mandelbrot</span></button>
-    <button class="w-button" onClick="mandelbrot(-600, -1300, 1850);"><span>Mandelbrot</span></button>
+    <button class="w-button" onClick="mandelbrot(-100,0,180);"><span>Mandelbrot complet</span></button>
+    <button class="w-button" onClick="mandelbrot(-200, -800, 950);"><span>Mandelbrot zoom 1</span></button>
+    <button class="w-button" onClick="mandelbrot(-600, -1300, 1850);"><span>Mandelbrot zoom 2</span></button>
 
 
 
@@ -74,14 +73,114 @@
 </div>
 
 <div id="nonGridContainer">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.6.0/math.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/mandelbrot.js"></script>
+
+ <div class="typer">Mulțimea Mandelbrot</div>
+             <p class="headline">
+
+Mulțimea Mandelbrot reprezintă, din punct de vedere matematic, o mulțime de numere complexe care satisface o anumită condiție. Mai precis, mulțimea Mandelbrot reprezintă mulțimea tuturor numerelor complexe c pentru care următoarea serie converge:
+             </p>
+
+
+<p class="headline">
+<math xmlns = "http://www.w3.org/1998/Math/MathML">
+
+        <mrow>
+            <msub>
+                <mi>Z</mi>
+                <mn>n+1</mn>
+            </msub>
+            <mo> = </mo>
+            <msubsup>
+                <mi>Z</mi>
+                <mn>n</mn>
+                <mn>2</mn>
+            </msubsup>
+            <mo> + </mo>
+            <mo> c </mo>
+        </mrow>
+
+      </math>
+</p>
+
+<p class="headline">
+unde z se inițializează cu 0.
+</p>
+
+<p class="headline">
+Astfel, dacă există o limită L astfel încât:
+</p>
+
+<p class="headline">
+<math xmlns = "http://www.w3.org/1998/Math/MathML">
+
+        <mrow>
+            <mo>|</mo>
+            <msub>
+                <mi>Z</mi>
+                <mn>n</mn>
+            </msub>
+            <mo>|</mo>
+             <mo> < </mo>
+             <mo> L </mo>
+        </mrow>
+
+      </math>
+
+
+
+</p>
+<p class="headline">
+pentru orice n, atunci numărul complex c este parte din mulțimea Mandelbrot.
+
+Dacă reprezentăm în planul complex toate numerele care fac parte din mulțimea Mandelbrot, obținem următoarea figură:
+
+</p>
+<img src="img/mandelbrot-limits.png">
+
+<p>
+    <a href="https://renatofonseca.net/mandelbrotset">Sursa imaginii</a>
+
+</p>
+
+
+<p class="headline">
+ Toate punctele negre corespund numerelor complexe care îndeplinesc condiția de convergență. Cea mai interesantă proprietate a mulțimii Mandelbrot este că este infinită fără sa fie infinită - cu cât ne apropiem de marginile acesteia se relevă noi structuri, asemănătoare cu structurile anterioare (autosimilaritate) dar nu ajungem niciodată la final. Nu reușim să găsim un factor de mărire a imaginii la care să nu apară noi protuberanțe.
+</p>
+
+<p class="headline">
+    Configurată în acest mod, imaginea mulțimii Mandelbrot este alb/negru. Fiecare punct din planul complex converge sau nu. Dar aceasta presupune ca testul de convergență este făcut cu un număr infinit de iterații. Cu cât numărul de iterații care “decide” convergență unui punct este mai mare, cu atât imaginea devine mai “precisă”. Punctele aflate pe marginea mulțimii vor converge cu viteze diferite. Dacă reprezentăm diferite viteze de convergență cu diferite culori, obținem imaginile cunoscute ale mulțimii Mandelbrot.
+</p>
+
+<p class="headline">
+  Interfața curentă oferă următoarele opțiuni:
+
+ <dl class="headline">
+      <dt class="llabel">Mandelbrot complet</dt>
+      <dd>Imaginea completă a mulțimii Mandelbrot. </dd>
+      <dt class="llabel">Mandelbrot zoom 1</dt>
+      <dd>Fragment al mulțimii Mandelbrot </dd>
+      <dt class="llabel">Mandelbrot zoom 1</dt>
+      <dd>Un fragment mai apropiat al mulțimii Mandelbrot </dd>
+</dl>
+
+
+</p>
+
+
+<p class="headline">
+    Codul care generează mulțimea Mandelbrot este adaptat din codul următor: <br>
+    <a href="https://rembound.com/articles/drawing-mandelbrot-fractals-with-html5-canvas-and-javascript">https://rembound.com/articles/drawing-mandelbrot-fractals-with-html5-canvas-and-javascript</a>
+
+
+</p>
 
 </div>
      </div>
         </div>
         <div id="footer"></div>
     </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.6.0/math.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/mandelbrot.js"></script>
 
 </html>
