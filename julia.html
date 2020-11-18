@@ -75,15 +75,90 @@
 </div>
 
 <div id="nonGridContainer">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.6.0/math.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/mandelbrot.js"></script>
-    <script src="js/julia.js"></script>
+    <div class="typer">Mulțimea Julia</div>
+             <p class="headline">
+
+Mulțimea Julia a fost descoperită cu mult timp înainte de mulțimea Mandelbrot de matematicianul francez Gaston Julia în 1918.
+
+Pornind de la aceeași formulă care a fost folosită pentru construcția setului Mandelbrot:
+
+             </p>
+
+<p class="headline">
+<math xmlns = "http://www.w3.org/1998/Math/MathML">
+
+        <mrow>
+            <msub>
+                <mi>Z</mi>
+                <mn>n+1</mn>
+            </msub>
+            <mo> = </mo>
+            <msubsup>
+                <mi>Z</mi>
+                <mn>n</mn>
+                <mn>2</mn>
+            </msubsup>
+            <mo> + </mo>
+            <mo> c </mo>
+        </mrow>
+
+      </math>
+</p>
+
+<p class="headline">
+    se pot construi o infinitate de mulțimi Julia. Pentru construcția unei astfel de mulțimi, se alege o constantă C fixă și se modifică valoarea de început a
+    iterațiilor (z<sub>0</sub>) care în cazul setului Mandelbrot era de fiecare dată 0. Dacă iterațiile converg, atunci z<sub>0</sub> este parte din mulțimea Julia
+    corespunzătoare constantei C alese. Dacă iterațiile diverg, atunci punctul z<sub>0</sub> nu face parte din mulțimea Julia.
+</p>
+
+<p class="headline">
+Relația dintre mulțimile Mandelbrot și Julia este astfel clară: mulțimea Mandelbrot este un index al tuturor mulțimilor Julia posibile.
+    Formele pe care le pot lua mulțimile Julia sunt foarte diferite dar ele pot fi împărțite în două grupuri: mulțimi Julia conectare și mulțimi Julia neconectate.
+    Mulțimile Julia neconectate au o infinitate de puncte de convergență risipite în plan înconjurate de zone de divergență mai rapidă sau mai lentă.
+    Acestea se numesc și mulțimi Julia de tip “praf”.
+
+</p>
+
+<table>
+    <tr>
+        <td><img width="350px" src="img/disconnected-julia.png"></td>
+        <td><img width="350px" src="img/connected-julia.png"></td>
+    </tr>
+    <tr>
+        <td class="headline">Multime Julia deconectată</td>
+        <td class="headline">Multime Julia conectată</td>
+    </tr>
+</table>
+
+<p class="headline">
+Relația dintre mulțimea Mandelbrot și mulțimile Julia corespunzătoare diferitelor puncte ale mulțimii Mandelbrot este schițată în figura următoare.
+    Cu cât punctul ales ca origine pentru mulțimea Julia este mai aproape de limita de convergență a mulțimii Mandelbrot cu atât mulțimea Julia rezultată este mai haotică, mai deconectată.
+    În apropiere de marginile mulțimii Mandelbrot, aceasta are comportament haotic, o variație foarte mică a lui C poate conduce la o mulțime Julia complet diferită.
+</p>
+<table>
+    <tr>
+        <td>
+            <img src="img/julia_mandel.gif">
+        </td>
+    </tr>
+    <tr>
+        <td class="headline">
+            Aspectul mulțimilor Julia în funcție de poziția constantei C în planul complex al mulțimii Mandelbrot
+            (adaptat din <a target="_blank" class="blink" href="http://paulbourke.net/fractals/juliaset/">http://paulbourke.net/fractals/juliaset/</a>).
+        </td>
+    </tr>
+
+</table>
+
+
 
 </div>
      </div>
         </div>
         <div id="footer"></div>
     </body>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.6.0/math.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/julia.js"></script>
 
 </html>

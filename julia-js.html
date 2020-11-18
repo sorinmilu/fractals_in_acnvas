@@ -1,3 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Fractali în canvas - Despre acest site</title>
+        <meta content="game of life" name="description">
+
+
+       <link href="css/main.css" rel="stylesheet" type="text/css">
+
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        <script src="js/main.js"></script>
+        <link href="css/normalize.css" rel="stylesheet" type="text/css">
+        <link href="css/pretify-tranquil-heart.css" rel="stylesheet" type="text/css">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+
+        <script>
+            //minimal settings
+            window.HORTON = {};
+            function displayStructures() {
+                    H_displayStills('stillsreport');
+                    H_displayScenes('scenesreport');
+            }
+
+        </script>
+
+    </head>
+
+    <body class="body silver">
+        <div class="navbar fixednav w-nav">
+            <a href="index.html" aria-current="page" class="brand w-nav-brand w--current">
+                <img src="img/logo.png" alt="Game of Life logo" id="logo">
+            </a>
+            <nav role="navigation" class="nav-menu w-nav-menu">
+                    <a href="index.html" class="nav-link w-nav-link">Home</a>
+                    <a href="canvas.html" class="nav-link w-nav-link">Canvas</a>
+                    <a href="chaos_game.html" class="nav-link w-nav-link">Jocul Haosului</a>
+                    <a href="mandelbrot.html" class="nav-link w-nav-link">Mandelbrot</a>
+                    <a href="julia.html" class="nav-link w-nav-link">Julia</a>
+                    <span class="cta nav-link w-nav-link">Despre acest site</span>
+            </nav>
+
+            <div class="menu-button w-nav-button"><img src="img/icon-hamburger-dark.svg" alt="" class="image-6"></div>
+            <div class="w-nav-overlay" data-wf-ignore=""></div>
+        </div>
+
+        <div class="container">
+            <div class="main-text">
+                <div class="typer">Implementarea setului Julia</div>
+                     <div class="headline">
+                         <pre class="prettyprint">
 //Adaptat din https://repl.it/talk/learn/Julia-Fractals-in-JavaScript/12806
 
 //Algoritmul foloseste biblioteca math.js (https://mathjs.org/docs/datatypes/complex_numbers.html) pentru implementarea directa
@@ -78,7 +136,7 @@ function pointToColor(point, maxIterations, constant) {
 
 
 // Aplicarea formulei Julia pentru testarea convergentei
-// Aceasta functie este apelata de functia pointToColor
+// Aceasta functie este apelata de functia pointtocolor
 function julia(z, i = 0, maxIterations, constant) {
   // z = z*z+constanta
 
@@ -105,3 +163,12 @@ function pixelToPoint(x, y, imagew, imageh) {
 }
 
 
+
+                         </pre>
+                     </div>
+
+        </div>
+    </div>
+ <div id="footer"></div>
+</body>
+</html>
