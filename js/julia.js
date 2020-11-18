@@ -1,4 +1,4 @@
-// The HTML elements we are using
+
 
 
 function drawJulia(real,imaginar) {
@@ -27,11 +27,11 @@ function doJulia(real,imaginar) {
     var canvas = document.querySelector('canvas')
     var ctx = canvas.getContext('2d')
 
-// The size of our canvas
+//dimensiunea calvasului in pixeli
     var imagew = canvas.width;
     var imageh = canvas.height;
 
-// Set the size of our canvas
+//
     var constant = math.complex(real, imaginar);
 
 // The maximum number of times we iterate a point to see if it escapes

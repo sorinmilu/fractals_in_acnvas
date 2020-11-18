@@ -389,7 +389,7 @@ select {
 }
 
 .w-nav-menu {
-    float: right
+    float: right;
 }
 
 body {
@@ -412,6 +412,7 @@ body {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
+    padding-left: 30px;
     display: flex;
    -ms-flex-direction: row;
     flex-direction: row;
@@ -432,8 +433,8 @@ body {
 .navbar {
     display: block;
     width: 100%;
-    padding-right: 30px;
-    padding-left: 30px;
+    /*padding-right: 30px;*/
+    /*padding-left: 30px;*/
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
@@ -709,4 +710,10 @@ body {
 .llabel {
     font-size: 20px;
     font-weight:900;
+}
+
+.blink {
+    color: #fdbd3f;
+    font-size: 18px;
+    text-decoration:none;
 }
