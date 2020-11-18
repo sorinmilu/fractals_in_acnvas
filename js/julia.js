@@ -44,7 +44,7 @@ function doJulia(real,imaginar) {
     var constant = math.complex(real, imaginar);
 
 // Numarul maxim de iteratii pentru testarea convergentei
-    var maxIterations = 164;
+    var maxIterations = 155;
 
    for (var y = 0; y < imageh; y++) {
     for (var x = 0; x < imagew; x++) {
@@ -64,7 +64,7 @@ function doJulia(real,imaginar) {
 // PointToColor este functia care returneaza culoarea calculata a fiecarui punct din plan
 function pointToColor(point, maxIterations, constant) {
 
-  var iterations = julia(point, 0, maxIterations, constant);
+ var iterations = julia(point, 0, maxIterations, constant);
   var percentage = iterations/maxIterations;
   var red = Math.floor(percentage*255);
   var green = Math.floor(percentage*85);
