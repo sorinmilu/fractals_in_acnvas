@@ -265,7 +265,7 @@ body {
 .w-button {
     display: inline-block;
     padding: 9px 15px;
-    background-color: #3898EC;
+    background-color: #74b087;
     color: #fff;
     border: 0;
     line-height: inherit;
@@ -289,6 +289,18 @@ body {
     border-radius: 2px;
 }
 
+.w-button-img {
+  display: inline-block;
+  padding: 5px;
+  background-color:#74b087;
+  color: #fff;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+  margin-bottom:5px;
+}
 
 /*------------------------------*/
 
@@ -577,7 +589,7 @@ body {
 .main-game {
     position: relative;
     display:flex;
-    padding-top: 20vh;
+    padding-top: 15vh;
     padding-right: 20px;
     padding-left: 60px;
     -webkit-box-orient: horizontal;
@@ -719,4 +731,11 @@ body {
     color: #fdbd3f;
     font-size: 18px;
     text-decoration:none;
+}
+
+#jbuttons {
+  display: inline-block;
+  width: 150px;
+  margin-top: 50px;
+  align-self: flex-start;
 }
